@@ -59,7 +59,11 @@
                 ?>
                     <tr>
                         <td><?php echo $no++                    ?></td>
-                        <td><?php echo $author['fullname'];         ?></td>
+                        <td>
+                            <a href="./author/author_profile.php?detail=<?= $author['id']; ?>">
+                                <?php echo $author['fullname'];         ?>
+                            </a>
+                        </td>
                         <td><?php echo $author['living_address'];      ?></td>
                         <td><?php echo $author['phone_number']; ?></td>
                         <td><?php echo $author['education'];    ?></td>

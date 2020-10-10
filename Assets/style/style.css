@@ -2,3 +2,8 @@ th {
     background-color: black;
     color: white;
 }
+
+.sizes {
+    width: 100px;
+    height:150px;
+}

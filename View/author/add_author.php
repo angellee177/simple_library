@@ -16,22 +16,26 @@
         <h3>Add new Author</h3>
         <hr>
         <div class="row justify-content-center">
-            <form action="../../Model/AuthorController.php" method="POST">
+            <form action="../../Model/AuthorController.php" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="upload_images">Author Images</label>
+                    <input type="file" name="upload_image" class="form-control" required>
+                </div>
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" name="name" class="form-control" placeholder="Enter Author Name here">
+                    <input type="text" name="name" class="form-control" placeholder="Enter Author Name here" required>
                 </div>
                 <div class="form-group">
                     <label for="address">Address</label>
-                    <input type="text" name="address" class="form-control" placeholder="Enter Author Address here">
+                    <input type="text" name="address" class="form-control" placeholder="Enter Author Address here" required>
                 </div>
                 <div class="form-group">
                     <label for="phone_number">Phone Number</label>
-                    <input type="text" name="phone_number" class="form-control" placeholder="Enter Author Phone Number here">
+                    <input type="text" name="phone_number" class="form-control" placeholder="Enter Author Phone Number here" required>
                 </div>
                 <div class="form-group">
                     <label for="education">Education</label>
-                    <input type="text" name="education" class="form-control" placeholder="Enter Author Education here">
+                    <input type="text" name="education" class="form-control" placeholder="Enter Author Education here" required>
                 </div>
                 <div class="form-group">
                     <button class="btn btn-primary" name="save_author">Save</button>

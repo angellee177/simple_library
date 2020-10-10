@@ -42,6 +42,7 @@
                 <tbody>
                 <?php
                     include './../Library/connection.php';
+
                     $no = 1;
                     $data = $connection->query("SELECT * FROM Authors JOIN Books ON Authors.id =  Books.id_author ORDER BY Books.title ASC") or 
                             die($connection->error);

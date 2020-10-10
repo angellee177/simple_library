@@ -19,15 +19,15 @@
             <form action="../../Model/BookController.php" method="POST">
                 <div class="form-group">
                     <label for="title">Book Title</label>
-                    <input type="text" name="title" class="form-control" placeholder="Enter Book Title here">
+                    <input type="text" name="title" class="form-control" placeholder="Enter Book Title here" required>
                 </div>
                 <div class="form-group">
                     <label for="year">Publishing Year</label>
-                    <input type="text" name="year" class="form-control" placeholder="Enter Book Publishing Year here">
+                    <input type="text" name="year" class="form-control" placeholder="Enter Book Publishing Year here" required>
                 </div>
                 <div class="form-group">
                     <label for="publisher">Publishing Companies</label>
-                    <input type="text" name="publisher" class="form-control" placeholder="Enter Book Publishing Companies here ">
+                    <input type="text" name="publisher" class="form-control" placeholder="Enter Book Publishing Companies here " required>
                 </div>
                 <div class="form-group">
                     <label for="author">Author</label>
