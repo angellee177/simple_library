@@ -56,7 +56,7 @@ if(isset($_POST['save_author'])) {
     }
 
     
-    header("location: ../View/index_author.php");
+    // header("location: ../View/index_author.php");
 }
 
 if(isset($_POST['update_author'])) {

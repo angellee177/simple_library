@@ -25,7 +25,7 @@
             <form action="../../Model/AuthorController.php" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="id" value="<?= $id ?>">
                 <div class="form-group">
-                    <label for="upload_images">Author Images</label>
+                    <label for="upload_images">Author Images<span class="tx-danger">*</span></label>
                     <input type="file" name="upload_image" class="form-control" value="<?php echo $authors['picture'] ?>">
                 </div>
                 <div class="form-group">

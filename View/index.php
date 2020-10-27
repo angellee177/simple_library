@@ -74,6 +74,54 @@
                 </tbody>
             </table>
         </div>
+        <div class="row justify-content-center">
+            <h3>Inner Join</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Title</th>
+                        <th>Year</th>
+                        <th>Publisher</th>
+                        <th>Author</th>
+                        <th colspan="2">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <?php
+                    include './../Library/connection.php';
+
+                    $no = 1;
+                    $data = $connection->query("SELECT * FROM Authors INNER JOIN Books ON Authors.id =  Books.id_author ORDER BY Books.title ASC") or 
+                            die($connection->error);
+
+                    if($data->num_rows) {
+                        while($books = $data->fetch_array()) :
+                ?>
+                    <tr>
+                        <td><?php echo $no++                    ?></td>
+                        <td><?php echo $books['title'];         ?></td>
+                        <td><?php echo $books['year'];      ?></td>
+                        <td><?php echo $books['publisher']; ?></td>
+                        <td><?php echo $books['fullname'];    ?></td>
+                        <td>
+                            <a href="../View/book/edit_book.php?edit=<?php echo $books['id']; ?>" class="btn btn-info">Edit</a>
+                            <a href="../Model/BookController.php?delete=<?php echo $books['id']; ?>" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                <?php
+                        endwhile;
+                    } else {
+                ?>
+                    <tr>
+                        <td>There is no Data on your database</td>
+                    </tr>
+                <?php
+                    }
+                ?>
+                </tbody>
+            </table>
+        </div>
     </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
