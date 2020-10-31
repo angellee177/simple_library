@@ -12,7 +12,7 @@ $educations = '';
 
 if(isset($_POST['save_author'])) {
     // The path to store the uploaded image
-    $target = __DIR__."/Images/";
+    $target = __DIR__."/Images/Authors/";
 
     // check file extension
     $file_extension = array('png', 'jpg', 'jpeg');
@@ -34,7 +34,7 @@ if(isset($_POST['save_author'])) {
     if(in_array($extension, $file_extension) === true){
         if($image_size < 1044070){			
             // move file to folder Images;
-            move_uploaded_file($file_tmp, $target .$picture);
+            move_uploaded_file($file_tmp, $target . $picture);
 
             // insert data to DB
             $query = mysqli_query($connection, "INSERT INTO Authors (fullname, living_address, phone_number, education, picture) VALUES('$name', '$address', '$phone', '$educations', '$picture') ") or die(mysqli_error($connection));
@@ -47,7 +47,7 @@ if(isset($_POST['save_author'])) {
                 $_SESSION['msg_type']   = "danger";
             }
         }else{
-            $_SESSION['message']    = "Images Size too big";
+            $_SESSION['message']    = "Image size is too big";
             $_SESSION['msg_type']   = "warning";
         }
     }else{
@@ -56,40 +56,43 @@ if(isset($_POST['save_author'])) {
     }
 
     
-    // header("location: ../View/index_author.php");
+    header("location: ../View/index_author.php");
 }
 
 if(isset($_POST['update_author'])) {
     // The path to store the uploaded image
-    $target = __DIR__."/Images/";
+    $target = __DIR__."/Images/Authors/";
 
-    // check file extension
+    // Check file extension
     $file_extension = array('png', 'jpg', 'jpeg');
     // The path to store the uploaded image
     $picture    = $_FILES['upload_image']['name'];
-    // get the file extension
+    // Get the file extension
     $x          = explode('.', $picture);
     $extension  = strtolower(end($x));
-    // check images size
+    // Check images size
     $image_size = $_FILES['upload_image']['size'];
     $file_tmp   = $_FILES['upload_image']['tmp_name'];
 
+    // Get others Data
     $id         = $_POST['id'];
     $name       = $_POST['name'];
     $address    = $_POST['address'];
     $phone      = $_POST['phone_number'];
     $educations = $_POST['education'];
+    $oldimage   = $_POST['oldimage'];
 
-    if(in_array($extension, $file_extension) === true){
+    if(in_array($extension, $file_extension) === true) {
         if($image_size < 1044070){
             try{
                 // move file to folder Images;
                 move_uploaded_file($file_tmp, $target . $picture);
+                unlink($target . $oldimage);
 
                 // Update data to table
                 $query = mysqli_query($connection, "UPDATE Authors SET fullname = '$name', living_address = '$address', phone_number = '$phone', education = '$educations', picture = '$picture' WHERE id = $id ") or die(mysqli_error($connection));
                 
-                $_SESSION['message']    = "New Author has been added";
+                $_SESSION['message']    = "Successfully updated Authors";
                 $_SESSION['msg_type']   = "success";
 
             }catch(Exception $e){
@@ -97,7 +100,7 @@ if(isset($_POST['update_author'])) {
                 $_SESSION['msg_type']   = "danger";
             }
         }else{
-            $_SESSION['message']    = "Images Size too big";
+            $_SESSION['message']    = "Image size is too big";
             $_SESSION['msg_type']   = "warning";
         }
     }else{
@@ -112,10 +115,17 @@ if(isset($_POST['update_author'])) {
 }
 
 if(isset($_GET['delete'])) {
-    $id = $_GET['delete'];
-    print_r($id);
+    // Get Authors ID that we want to delete
+    $id              = $_GET['delete'];
+    // Get Images Path
+    $target          = __DIR__ . "/Images/Authors/";
 
-    mysqli_query($connection, "DELETE FROM Authors WHERE id=$id ");
+    $data            = $connection->query("SELECT picture FROM Authors WHERE id = $id ") or die ($connection->error);
+    $result          = $data->fetch_assoc();
+    $author_oldimage = $result['picture'];
+    unlink($target . $author_oldimage);
+
+    $connection->query("DELETE FROM Authors WHERE id=$id ") or die ($connection->error);
 
     // Alert Message
     $_SESSION['message']    = 'Record has been deleted!';
