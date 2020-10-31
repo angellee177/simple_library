@@ -16,21 +16,25 @@
         <h3>Add new Book</h3>
         <hr>
         <div class="row justify-content-center">
-            <form action="../../Model/BookController.php" method="POST">
+            <form action="../../Model/BookController.php" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
-                    <label for="title">Book Title</label>
+                    <label for="upload_books_picture">Books Cover <span class="tx-danger">*</span></label>
+                    <input type="file" name="books_cover" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="title">Book Title<span class="tx-danger">*</span></label>
                     <input type="text" name="title" class="form-control" placeholder="Enter Book Title here" required>
                 </div>
                 <div class="form-group">
-                    <label for="year">Publishing Year</label>
+                    <label for="year">Publishing Year<span class="tx-danger">*</span></label>
                     <input type="text" name="year" class="form-control" placeholder="Enter Book Publishing Year here" required>
                 </div>
                 <div class="form-group">
-                    <label for="publisher">Publishing Companies</label>
+                    <label for="publisher">Publishing Companies<span class="tx-danger">*</span></label>
                     <input type="text" name="publisher" class="form-control" placeholder="Enter Book Publishing Companies here " required>
                 </div>
                 <div class="form-group">
-                    <label for="author">Author</label>
+                    <label for="author">Author<span class="tx-danger">*</span></label>
                     <select name="author" id="author">
                         <option disabled selected>Select Author</option>
                         <?php

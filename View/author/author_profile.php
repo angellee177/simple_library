@@ -25,7 +25,7 @@
         <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-3">
-                <img class="sizes" src="<?php echo "../../Model/Images/". $author_detail['picture']; ?>" alt="">
+                <img class="sizes" src="<?php echo "../../Model/Images/Authors/". $author_detail['picture']; ?>" alt="">
             </div>
             <div class="col-md-3">
                 <p style="float: left">Author Name: <?= $author_detail['fullname'] ?></p>

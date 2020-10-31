@@ -18,23 +18,23 @@
         <div class="row justify-content-center">
             <form action="../../Model/AuthorController.php" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
-                    <label for="upload_images">Author Images</label>
+                    <label for="upload_images">Author Images<span class="tx-danger">*</span></label>
                     <input type="file" name="upload_image" class="form-control" required>
                 </div>
                 <div class="form-group">
-                    <label for="name">Name</label>
+                    <label for="name">Name<span class="tx-danger">*</span></label>
                     <input type="text" name="name" class="form-control" placeholder="Enter Author Name here" required>
                 </div>
                 <div class="form-group">
-                    <label for="address">Address</label>
+                    <label for="address">Address<span class="tx-danger">*</span></label>
                     <input type="text" name="address" class="form-control" placeholder="Enter Author Address here" required>
                 </div>
                 <div class="form-group">
-                    <label for="phone_number">Phone Number</label>
+                    <label for="phone_number">Phone Number<span class="tx-danger">*</span></label>
                     <input type="text" name="phone_number" class="form-control" placeholder="Enter Author Phone Number here" required>
                 </div>
                 <div class="form-group">
-                    <label for="education">Education</label>
+                    <label for="education">Education<span class="tx-danger">*</span></label>
                     <input type="text" name="education" class="form-control" placeholder="Enter Author Education here" required>
                 </div>
                 <div class="form-group">
