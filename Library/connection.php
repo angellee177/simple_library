@@ -9,7 +9,7 @@ try{
     // Procedural Style
     // $link = mysqli_connect("localhost", "root", "", "project_RDBMS1");
     // OOP style
-    $connection = new mysqli('localhost', 'root', '', 'project_RDBMS1');
+    $connection = new mysqli($host, $usrname, $pwd, $dbname);
 }catch(Exception $e) {
     echo "Connection to Database error : " . $e->getMessage();
 }
