@@ -47,7 +47,7 @@
                     <select name="author" id="author">
                         <?php
                             require_once './../../Library/connection.php';
-                            $data = $connection->query("SELECT * FROM Authors"); 
+                            $data = $connection->query("SELECT * FROM Authors") or die(mysqli_error($connection)); 
 
                             while($authors = $data->fetch_assoc()) :
                         ?>

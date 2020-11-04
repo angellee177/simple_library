@@ -1,6 +1,6 @@
 <?php
 
-include './../Library/connection.php';
+include '../Library/connection.php';
 
 session_start();
 
