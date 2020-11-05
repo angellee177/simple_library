@@ -11,3 +11,48 @@ th {
 .tx-danger {
     color: #dc3545; 
 }
+
+.footer {
+    font-size: 10px;
+    font-family: -apple-system, BlinkMacSystemFont, "Inter UI", Roboto, sans-serif;
+    letter-spacing: .3px;
+    padding: 15px 25px;
+    background-color: #fafbfc;
+    color: #637388;
+    border-top: 1px solid rgba(72, 94, 144, 0.16);
+    text-transform: uppercase;
+    display: none; 
+}
+
+@media (min-width: 992px) {
+    .footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between; 
+    } 
+}
+
+.footer a {
+    padding: 0;
+    color: #1b2e4b; 
+}
+
+.footer a:hover, .footer a:focus {
+        color: #0168fa; 
+}
+
+.footer a + .nav-link {
+        margin-left: 25px; 
+}
+
+.footer > div:last-child {
+    margin-top: 15px; 
+}
+
+@media (min-width: 576px) {
+    .footer > div:last-child 
+    {
+        margin-top: 0; 
+    } 
+}
+  
