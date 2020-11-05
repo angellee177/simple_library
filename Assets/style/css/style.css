@@ -1,3 +1,14 @@
+nav.navbar {
+    border-bottom: 1px solid rgba(72, 94, 144, 0.16);
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgba(72, 94, 144, 0.16);
+}
+
+h3 {
+    font-family: "Montserrat", Helvetica, Arial, sans-serif;
+}
+
 th {
     background-color: black;
     color: white;
@@ -10,6 +21,17 @@ th {
 
 .tx-danger {
     color: #dc3545; 
+}
+
+.text-grey {
+    color: #5b5656;
+}  
+
+.tx-color-01 {
+    color: #001737; }
+
+.txt-center {
+    text-align: center !important;
 }
 
 .footer {
@@ -55,4 +77,98 @@ th {
         margin-top: 0; 
     } 
 }
+
+.container-fluid {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto; 
+}
+
+.navbar {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem; }
+    .navbar > .container,
+    .navbar > .container-fluid {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between; }
   
+
+.tx-bold {
+    font-weight: 700; 
+}
+      
+.mg-30 {
+    margin: 30px !important;
+}
+
+.mg-b-0 {
+    margin-bottom: 0px !important;
+}
+
+.mg-b-10 {
+    margin-bottom: 10px !important;
+}
+
+.mg-b-20 {
+    margin-bottom: 20px !important;
+}
+
+.mg-b-30 {
+    margin-bottom: 30px !important;
+}
+
+.mg-b-100 {
+    margin-bottom: 100px !important;
+}
+
+.mg-t-10 {
+    margin-top: 10px !important;
+}
+
+.mg-t-20 {
+    margin-top: 20px !important;
+}
+
+.mg-t-30 {
+    margin-top: 30px !important;
+}
+
+.mg-t-40 {
+    margin-top: 40px !important;
+}
+
+.mg-t-50 {
+    margin-top: 50px !important;
+}
+
+.mg-l-10 {
+    margin-left: 10px !important;
+}
+
+.mg-l-20 {
+    margin-left: 20px !important;
+}
+
+.mg-l-30 {
+    margin-left: 30px !important;
+}
+
+.mg-r-10 {
+    margin-right: 10px !important;
+}
+
+.wd-100p {
+    width: 100px; 
+}
+
+.ht-50 {
+    height: 50px; 
+}

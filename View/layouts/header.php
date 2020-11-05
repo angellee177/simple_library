@@ -1,28 +1,29 @@
-    <nav class="navbar navbar-expand-lg bg-light navbar-light static-top">
+    <nav class="navbar navbar-expand-lg navbar-light static-top mg-b-30">
         <div class="container">
             <a href="#" class="navbar-brand">
-                <h2 style="font-family: courier">Trove Library</h2>
+                <img src="../../Assets/img/logo.png" class="wd-100p ht-50" alt="">
             </a>
+            <h2 style="font-family: courier" class="mg-t-10">Trove Library</h2>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a href="./index.php" class="nav-link">Home</a>
+                        <a href="../landing/index.php" class="nav-link">Home</a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">Article</a>
                     </li>
                     <li class="nav-item">
-                        <a href="./about_us.php" class="nav-link">About Us</a>
+                        <a href="../landing/about_us.php" class="nav-link">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a href="./contact_us.php" class="nav-link">Contact Us</a>
+                        <a href="../landing/contact_us.php" class="nav-link">Contact Us</a>
                     </li>
                     <li class="nav-item">
-                        <a href="./auth/login.php">
-                            <p class="button button-danger">Sign In</p>
+                        <a href="../auth/login.php" class="nav-link">
+                            <p class="tx-bold mg-b-0 tx-danger">Sign In</p>
                         </a>
                     </li>
                 </ul>

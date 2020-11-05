@@ -1,6 +1,18 @@
 <?php 
 
-include '../Library/connection.php';
+$host    = "localhost";
+$usrname = "root";
+$pwd     = "";
+$dbname  = "project_RDBMS1";
+
+try{
+    // Procedural Style
+    // $link = mysqli_connect("localhost", "root", "", "project_RDBMS1");
+    // OOP style
+    $connection = new mysqli($host, $usrname, $pwd, $dbname);
+}catch(Exception $e) {
+    echo "Connection to Database error : " . $e->getMessage();
+}
 
 session_start();
 
@@ -50,7 +62,7 @@ if(isset($_POST['save'])) {
         $_SESSION['msg_type']           = "warning";
     }
     
-    header("location: ../View/index_book.php");
+    header("location: ../View/landing/index.php");
 }
 
 
@@ -103,7 +115,7 @@ if(isset($_POST['update_book'])) {
         $_SESSION['msg_type']   = "warning";
     }
     
-    header("location: ../View/index_book.php");
+    header("location: ../View/landing/index.php");
 }
 
 if(isset($_GET['delete'])) {
@@ -125,5 +137,5 @@ if(isset($_GET['delete'])) {
     $_SESSION['msg_type']   = 'danger';
 
     // Back to Index
-    header("location: ../View/index_book.php");
+    header("location: ../View/landing/index.php");
 }
