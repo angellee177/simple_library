@@ -35,7 +35,7 @@
                 </div>
                 <div class="form-group">
                     <label for="author">Author<span class="tx-danger">*</span></label>
-                    <select name="author" id="author">
+                    <select name="author" id="author" class="form-control">
                         <option disabled selected>Select Author</option>
                         <?php
                             require_once './../../Library/connection.php';
@@ -48,6 +48,10 @@
                             endwhile;
                         ?>
                     </select>
+                </div>
+                <div class="form-group">
+                    <label for="description">Books Descriprion<span class="tx-danger">*</span></label>
+                    <textarea name="description" id="description" cols="30" rows="10" class="form-control"></textarea>
                 </div>
                 <div class="form-group">
                     <button class="btn btn-primary" name="save">Save</button>

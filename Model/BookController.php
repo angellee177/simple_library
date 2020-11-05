@@ -24,6 +24,7 @@ if(isset($_POST['save'])) {
     $year           = $_POST['year'];
     $publisher      = $_POST['publisher'];
     $id_author      = $_POST['author'];
+    $description    = $_POST['description'];
 
     if(in_array($extension, $file_extension) === true) {
         if($image_size < 5242880){
@@ -31,7 +32,7 @@ if(isset($_POST['save'])) {
             move_uploaded_file($file_tmp, $target . $picture);
 
             // insert data to DB 
-            $query = mysqli_query($connection, "INSERT INTO Books (title, year, publisher, id_author, book_picture) VALUES('$title', '$year', '$publisher', '$id_author', '$picture') ") or die(mysqli_error($connection));
+            $query = mysqli_query($connection, "INSERT INTO Books (title, description, year, publisher, id_author, book_picture) VALUES('$title', '$description', '$year', '$publisher', '$id_author', '$picture') ") or die(mysqli_error($connection));
         
             if($query) {
                 $_SESSION['message']    = "New Book Successfully added!";
@@ -75,6 +76,7 @@ if(isset($_POST['update_book'])) {
     $publisher      = $_POST['publisher'];
     $id_author      = $_POST['author'];
     $oldimage       = $_POST['books_oldimage'];
+    $description    = $_POST['description'];
 
     if(in_array($extension, $file_extension) === true) {
         if($image_size < 5242880) {
@@ -83,7 +85,7 @@ if(isset($_POST['update_book'])) {
             unlink($target . $oldimage);
             
             // insert data to table
-            $query = mysqli_query($connection, "UPDATE Books SET title = '$title', year = '$year', publisher = '$publisher', id_author = '$id_author', book_picture = '$picture' WHERE id = $id ") or die(mysqli_error($connection));
+            $query = mysqli_query($connection, "UPDATE Books SET title = '$title', description = '$description', year = '$year', publisher = '$publisher', id_author = '$id_author', book_picture = '$picture' WHERE id = $id ") or die(mysqli_error($connection));
 
             if ($query) {
                 $_SESSION['message']    = "Book successfully updated!";

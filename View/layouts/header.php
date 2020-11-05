@@ -9,19 +9,19 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a href="../index.php" class="nav-link">Home</a>
+                        <a href="./index.php" class="nav-link">Home</a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">Article</a>
                     </li>
                     <li class="nav-item">
-                        <a href="../about_us.php" class="nav-link">About Us</a>
+                        <a href="./about_us.php" class="nav-link">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a href="../contact_us.php" class="nav-link">Contact Us</a>
+                        <a href="./contact_us.php" class="nav-link">Contact Us</a>
                     </li>
                     <li class="nav-item">
-                        <a href="../auth/login.php" class="nav-link">
+                        <a href="./auth/login.php">
                             <p class="button button-danger">Sign In</p>
                         </a>
                     </li>
