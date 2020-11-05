@@ -26,7 +26,7 @@
         <br>
         <div class="row">
             <div class="col-md-3">
-                <a href="./index_book.php">Back to Index</a>
+                <a href="./index.php">View Book List</a>
             </div>
             <div class="col-xs-2"></div>
             <div class="col-md-3">
