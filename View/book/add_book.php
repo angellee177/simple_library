@@ -13,7 +13,7 @@
     <div class="container">
         <h2>Simple Library System With Basic PHP</h2>
         <br>
-        <a href="../index.php">Back</a>
+        <a href="../landing/index.php">Back</a>
         <br>
         <br>
         <h3>Add new Book</h3>
@@ -54,10 +54,10 @@
                 </div>
                 <div class="form-group">
                     <label for="description">Books Descriprion<span class="tx-danger">*</span></label>
-                    <textarea name="description" id="description" cols="30" rows="10" class="form-control"></textarea>
+                    <textarea name="description" id="description" cols="30" rows="10" class="form-control" required>Please input your book description here.</textarea>
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-primary" name="save">Save</button>
+                    <button class="btn btn-danger btn-block" name="save">Save</button>
                 </div>
             </form>
         </div>

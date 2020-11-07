@@ -20,7 +20,7 @@
     <div class="container">
         <h2>Simple Library System With Basic PHP</h2>
         <br>
-        <a href="../index.php">Back</a>
+        <a href="../landing/index.php">Back</a>
         <br>
         <br>
         <h3>Add new Book</h3>
@@ -47,7 +47,7 @@
                 </div>
                 <div class="form-group">
                     <label for="author">Author<span class="tx-danger">*</span></label>
-                    <select name="author" id="author">
+                    <select name="author" id="author" class="form-control">
                         <?php
                             require_once './../../Library/connection.php';
                             $data = $connection->query("SELECT * FROM Authors") or die(mysqli_error($connection)); 
@@ -61,7 +61,11 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-info" name="update_book">Save</button>
+                    <label for="description">Books Description<span class="tx-danger">*</span></label>
+                    <textarea name="description" id="description" cols="30" rows="10" class="form-control" required><?= $books['description'] ?></textarea>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-info btn-block" name="update_book">Save</button>
                 </div>
             </form>
         </div>

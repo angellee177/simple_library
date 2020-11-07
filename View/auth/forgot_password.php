@@ -9,6 +9,8 @@
     <title>Register</title>
 </head>
 <body>
+    <?php require_once "../../Model/Auth/ForgotPasswordController.php" ?>
+    <?php include "../../Helper/response.php" ?>
     <?php include '../layouts/header.php' ?>
     <div class="container">
         <div class="row mg-b-10">
@@ -29,7 +31,7 @@
                         <input type="email" name="email" id="email" class="form-control" placeholder="Please input your email here." required>
                     </div>
                     <div class="form-group">
-                        <button class="btn btn-warning btn-block" name="forgot_password" id="forgot_password" class="form-control">Send Reset password Link</button>
+                        <button class="btn btn-danger btn-block" name="forgot_password" id="forgot_password" class="form-control">Send Reset password Link</button>
                     </div>
                 </form>
             </div>

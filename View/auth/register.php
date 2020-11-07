@@ -9,6 +9,8 @@
     <title>Register</title>
 </head>
 <body>
+    <?php require_once "../../Model/Auth/RegisterController.php" ?>
+    <?php include "../../Helper/response.php" ?>
     <?php include '../layouts/header.php' ?>
     <div class="container">
         <div class="row mg-b-10">
@@ -25,6 +27,10 @@
             <div class="col-md-5">
                 <form action="../../Model/Auth/RegisterController.php" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
+                        <label for="fullname">Fullname</label>
+                        <input type="text" name="fullname" id="fullname" class="form-control" placeholder="Please input your fullname here." required>
+                    </div>
+                    <div class="form-group">
                         <label for="email">Email Address<span class="tx-danger">*</span></label>
                         <input type="email" name="email" id="email" class="form-control" placeholder="Please input your email here." required>
                     </div>
@@ -37,7 +43,7 @@
                         <input type="password" name="password_confirmation" id="password_confirmation" class="form-control" placeholder="Please confirm your password here." required>
                     </div>
                     <div class="form-group mg-t-50">
-                        <button class="btn btn-warning btn-block" name="register_user" id="register_user" >Sign Up</button>
+                        <button class="btn btn-danger btn-block" name="register_user" id="register_user" >Sign Up</button>
                     </div>
                 </form>
             </div>

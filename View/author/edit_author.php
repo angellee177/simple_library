@@ -18,7 +18,7 @@
     <div class="container">
         <h2>Simple Library System With Basic PHP</h2>
         <br>
-        <a href="../index_author.php">Back</a>
+        <a href="../author/index.php">Back</a>
         <br>
         <br>
         <h3>Edit Author</h3>
@@ -48,7 +48,7 @@
                     <input type="text" name="education" class="form-control"  value="<?php echo $authors['education'] ?>" placeholder="Enter Author Education here" required>
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-info" name="update_author"> Update Author</button>
+                    <button class="btn btn-info btn-block" name="update_author"> Update Author</button>
                 </div>
             </form>
         </div>

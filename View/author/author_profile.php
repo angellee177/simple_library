@@ -44,7 +44,7 @@
         <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-3">
-            <a href="../index_author.php" class="btn btn-primary">Back to Author List</a>
+            <a href="../author/index.php" class="btn btn-primary">Back to Author List</a>
             </div>
         </div>
     </div>

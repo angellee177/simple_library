@@ -7,4 +7,4 @@ session_start();
 // destroy session
 session_destroy();
 
-header('location: ../View/landing/index.php');
+header('location: ../../View/auth/login.php');

@@ -21,11 +21,26 @@
                     <li class="nav-item">
                         <a href="../landing/contact_us.php" class="nav-link">Contact Us</a>
                     </li>
+                <?php if(isset($_SESSION['role'])) : ?>
+                    <li class="nav-item">
+                        <a href="../auth/login.php" class="nav-link">
+                            <p class="tx-bold mg-b-0 tx-danger">
+                                <?php 
+                                    echo $_SESSION['name'];
+                                    ?>
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../../Model/Auth/LogOutController.php" class="nav-link">Log Out</a>
+                    </li>
+                <?php else : ?>
                     <li class="nav-item">
                         <a href="../auth/login.php" class="nav-link">
                             <p class="tx-bold mg-b-0 tx-danger">Sign In</p>
                         </a>
                     </li>
+                <?php endif ?>
                 </ul>
             </div>
         </div>

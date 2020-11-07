@@ -9,6 +9,8 @@
     <title>Login</title>
 </head>
 <body>
+    <?php require_once "../../Model/Auth/LoginController.php" ?>
+    <?php include "../../Helper/response.php" ?>
     <?php include '../layouts/header.php' ?>
     <div class="container">
         <div class="row mg-b-10">
@@ -31,7 +33,14 @@
                         <input type="password" name="password" id="password" class="form-control" placeholder="please input your password here." required>
                     </div>
                     <div class="form-group mg-t-50">
-                        <button class="btn btn-warning btn-block" name="login_user" id="login_user" class="form-control">Sign In</button>
+                        <button class="btn btn-danger btn-block" name="login_user" id="login_user" class="form-control">Sign In</button>
+                    </div>
+                    <div class="form-group">
+                        <p>Don't have account? 
+                            <a href="../auth/register.php"> Register Here.</a>
+                             or 
+                            <a href="../auth/forgot_password.php">forgot password?</a>
+                        </p>
                     </div>
                 </form>
             </div>

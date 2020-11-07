@@ -9,5 +9,7 @@
     <title>Reset Password</title>
 </head>
 <body>
+    <?php require_once "../../Model/Auth/ResetPasswordController.php" ?>
+    <?php include "../../Helper/response.php" ?>
     <?php include '../layouts/header.php' ?>
     <?php include '../layouts/footer.php' ?>
