@@ -23,7 +23,7 @@
         <div class="row mg-b-100">
             <div class="col-md-2"></div>
             <div class="col-md-5">
-                <form action="../../Model/Auth/LoginController.php" method="POST">
+                <form action="../../Model/Auth/LoginController.php" method="POST" accept-charset="utf-8">
                     <div class="form-group">
                         <label for="email">Email Address<span class="tx-danger">*</span></label>
                         <input type="email" name="email" id="email" class="form-control" placeholder="please input your email here." required>
