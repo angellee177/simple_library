@@ -18,28 +18,36 @@ session_start();
 
 // Sign In User
 if(isset($_POST['login_user'])) {
-    $email     = $_POST['email'];
-    $password  = $_POST['password'];
-    $errors    = [];
+    $email          = $_POST['email'];
+    $password       = $_POST['password'];
+    $link_address   = "../../View/auth/resend_verify.php";
+    $errors         = [];
 
     $result = $connection->query("SELECT * FROM Users WHERE email = '$email' LIMIT 1 ") or die($connection->error);
     
     if(mysqli_num_rows($result) === 1) {
         $user = $result->fetch_assoc();
 
-        if(password_verify($password, $user['password'])) {
-            $_SESSION['login']   = true;
-            $_SESSION['name']    = $user['fullname'];
-            $_SESSION['role']    = $user['role'];
-            $_SESSION['message'] = "Yeayy! welcome back to Trovey.";
-            $_SESSION['msg_type']    = "success";
+        if($user['verify_token'] == null) {
+            $_SESSION['message']    = "Please Verify your account first!" .  " Have not receive email yet? <a href='".$link_address."'>Send Verification email.</a>";
+            $_SESSION['msg_type']   = "danger";
 
-            header('location: ../../View/landing/index.php');
-            exit();
+            header('location: ../../View/auth/login.php');
         } else {
-            $errors['login_fail'] = "Sorry, Your password is wrong Please try again!";
+            if(password_verify($password, $user['password'])) {
+                $_SESSION['login']   = true;
+                $_SESSION['name']    = $user['fullname'];
+                $_SESSION['role']    = $user['role'];
+                $_SESSION['message'] = "Yeayy! welcome back to Trovey.";
+                $_SESSION['msg_type']    = "success";
+    
+                header('location: ../../View/landing/index.php');
+                exit();
+            } else {
+                $errors['login_fail'] = "Sorry, Your password is wrong Please try again!";
+            }
         }
-
+        
     } else {
         $errors['login_fail'] = "Sorry, Your email doesn't exist in our database.";
     }
