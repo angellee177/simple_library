@@ -48,8 +48,8 @@ if(isset($_POST['register_user'])) {
             $mail->SMTPDebug  = 3;
             $mail->Host       = "smtp.gmail.com";
             $mail->SMTPAuth   = true;
-            $mail->Username   = "angelriapurnamasari17@gmail.com";                 
-            $mail->Password   = "Whitegoodangel170497";                        
+            $mail->Username   = "YOUR_GMAIL_EMAIL";                 
+            $mail->Password   = "YOUR_EMAIL_PASSWORD";                        
             //If SMTP requires TLS encryption then set it
             $mail->SMTPSecure = "tsl";                           
             //Set TCP port to connect to
@@ -146,8 +146,8 @@ if(isset($_POST['resend_verification'])) {
         $mail->SMTPDebug  = 3;
         $mail->Host       = "smtp.gmail.com";
         $mail->SMTPAuth   = true;
-        $mail->Username   = "angelriapurnamasari17@gmail.com";                 
-        $mail->Password   = "Whitegoodangel170497";                        
+        $mail->Username   = "YOUR_GMAIL_EMAIL";                 
+        $mail->Password   = "YOUR_EMAIL_PASSWORD";                        
         //If SMTP requires TLS encryption then set it
         $mail->SMTPSecure = "tsl";                           
         //Set TCP port to connect to
