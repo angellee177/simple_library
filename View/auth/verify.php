@@ -12,20 +12,21 @@
     <?php require_once "../../Model/Auth/ResetPasswordController.php" ?>
     <?php include "../../Helper/response.php" ?>
     <?php include '../layouts/header.php' ?>
-    <?php include '../layouts/header.php' ?>
     <?php
         require_once '../../Library/connection.php';
         $token   = $_GET['token'];
+        $email   = $_GET['email'];
     ?>
         <div class="container-fluid">
             <div class="row mg-t-30">
                 <div class="col-md-4"></div>
                 <div class="col-md-4">
-                    <form action="../../Model/Auth">
+                    <form action="../../Model/Auth/RegisterController.php" method="POST">
                         <div class="card no-border mg-30">
                             <div class="card-body">
                                 <h5 class="card-title">Verify your account here</h5>
-                                <input type="hidden" name="verify_token" value="<?= $token ?>">
+                                <input type="hidden" name="verify_token" value="<?= $token ?>" >
+                                <input type="hidden" name="email" value="<?= $email ?>" >
                                 <button class="btn btn-danger btn-block" name="verify_account">Verify</button>
                             </div>
                         </div>
