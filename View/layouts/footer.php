@@ -1,7 +1,7 @@
     <footer class="footer">
         <div>
             <span>&copy; Copyright <?= date("Y"); ?></span>
-            <span><a href="https://www.quarkspark.co/" target="__blank">Quarkspark Technologies</a> - <a href="https://www.vcargocloud.com/" target="__blank">vCargo Cloud Pte Ltd.</a></span>
+            <span><a href="#" target="__blank">Trove Library</a> - <a href="#" target="__blank">Trove Technologies Pte Ltd.</a></span>
         </div>
     </footer>
 </body>
