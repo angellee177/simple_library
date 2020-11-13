@@ -207,7 +207,7 @@
                         <a href="">%link%</a>
                     </div>
                     <!-- Action -->
-                    <p style="text-align: center;">Thanks, <br>{{ config('website.web_title') }}</p>
+                    <p style="text-align: center;">Thanks, <br>Trove Library</p>
                   </td>
                 </tr>
               </table>
