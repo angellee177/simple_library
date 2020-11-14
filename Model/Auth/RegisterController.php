@@ -48,7 +48,7 @@ if(isset($_POST['register_user'])) {
             $mail->SMTPDebug  = 3;
             $mail->Host       = "smtp.gmail.com";
             $mail->SMTPAuth   = true;
-            $mail->Username   = "YOUR_GMAIL_EMAIL";                 
+            $mail->Username   = "YOUR_GMAIL_ACCOUNT";                 
             $mail->Password   = "YOUR_EMAIL_PASSWORD";                        
             //If SMTP requires TLS encryption then set it
             $mail->SMTPSecure = "tsl";                           
@@ -129,35 +129,36 @@ if(isset($_POST['resend_verification'])) {
     $email      = $_POST['email'];
     $token      = bin2hex(random_bytes(50)); // Generate Unique token
     $mail       = new PHPMailer(true);
-    $message    = file_get_contents('../../View/emails/verify_account.php'); 
-    $message    = str_replace('%fullname%', $fullname, $message); 
-    $message    = str_replace('%link%', "http://localhost/simple_library/View/auth/verify.php?token=" . $token . "&email=" . $email, $message); 
     $errors     = [];
 
     $result = $connection->query("SELECT * FROM Users WHERE email = '$email' LIMIT 1 ") or die($connection->error);
 
     if(mysqli_num_rows($result) === 1) {
         $user = $result->fetch_assoc();
-
-        $fullname = $user['fullname'];
+       
+        $current_year = date ( "Y" );
+        $fullname     = $user['fullname'];
+        $message      = file_get_contents('../../View/emails/verify_account.php'); 
+        $message      = str_replace('%fullname%', $fullname, $message); 
+        $message      = str_replace('%link%', "http://localhost/simple_library/View/auth/verify.php?token=" . $token . "&email=" . $email, $message);
+        $message      = str_replace('%date%', $current_year, $message);
 
         // send verification email
         $mail->isSMTP();
         $mail->SMTPDebug  = 3;
         $mail->Host       = "smtp.gmail.com";
         $mail->SMTPAuth   = true;
-        $mail->Username   = "YOUR_GMAIL_EMAIL";                 
-        $mail->Password   = "YOUR_EMAIL_PASSWORD";                        
+        $mail->Username   = "YOUR_GMAIL_ACCOUNT";                 
+        $mail->Password   = "YOUR_GMAIL_PASSWORD";                        
         //If SMTP requires TLS encryption then set it
         $mail->SMTPSecure = "tsl";                           
         //Set TCP port to connect to
         $mail->Port       = 587; 
         $mail->setFrom( 'angelriapurnamasari17@gmail.com' , 'Angel' );
-        $mail->addAddress($email, $fullname);     // Add a recipient
+        $mail->addAddress($email, "customer1");     // Add a recipient
         $mail->isHTML(true);                                  // Set email format to HTML
 
         $mail->Subject    = 'Verify your account.';
-        // $mail->Body    = $message;
         $mail->Body       = $message;
         $mail->AltBody    = 'This is the body in plain text for non-HTML mail clients';
 

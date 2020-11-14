@@ -23,7 +23,7 @@
                     </li>
                 <?php if(isset($_SESSION['role'])) : ?>
                     <li class="nav-item">
-                        <a href="../auth/login.php" class="nav-link">
+                        <a href="#" class="nav-link">
                             <p class="tx-bold mg-b-0 tx-danger">
                                 <?php 
                                     echo $_SESSION['name'];

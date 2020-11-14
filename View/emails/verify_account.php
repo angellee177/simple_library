@@ -199,7 +199,7 @@
                     <p>Please Verify your account,</p>
                     <br>
                     <div align="center">
-                        <a href="{{ $data->link }}" class="button button--blue">Check it out.</a>
+                        <a href="%link%" class="button button--blue">Check it out.</a>
                     </div>
                     <br>
                     <p style="text-align: center;">Or Copy This Link to Your Browser</p>
@@ -219,7 +219,7 @@
                 <tr>
                   <td class="content-cell">
                     <p class="sub center">
-                        <br> © Copyright {{ date('Y') }}
+                        <br> © Copyright %date%
                     </p>
                   </td>
                 </tr>
